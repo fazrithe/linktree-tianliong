@@ -25,7 +25,39 @@ https://github.com/ardacarofficial/links-website is open source project.
      <!-- Slick CSS -->
      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-</head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	 -->
+
+     <style>
+    
+      .btn-wa {
+       
+          }
+        
+      
+        
+      .kotak-kontak {
+        background-color: aliceblue;
+        position: fixed;
+          bottom: -400px; /*posisi kontak keadaan awal di bawah */
+        width: 300px; /*lebar kotak nya*/
+        left : 70%; /*posisi kotaknya*/
+        
+        }
+        
+      .kontak { /*kotak masing2 kontak*/
+        border-radius:4px; /*corner melengkung*/
+        background:lightgrey; /*warna background*/
+        }
+        
+      @media only screen and (max-width: 600px) {
+      .kotak-kontak {
+        left : 10%;  }
+      }
+          
+      </style>    
+    </head>
 
 <body>
   <header class="mb-2  mt-2 p-3">
@@ -56,7 +88,7 @@ https://github.com/ardacarofficial/links-website is open source project.
         <a href="http://www.facebook.com/sharer/sharer.php?u=https://tianliong.co.id/linktree/&t=Tiang Liong"><img src="img/socmed/Facebook.svg" width="48"></a>
         <a href="https://www.instagram.com/?url=https://tianliong.co.id/linktree/"><img src="img/socmed/instagram.png" width="48"></a>
         <a href="https://telegram.me/share/url?url=https://tianliong.co.id/linktree/&text=Tian LIong"><img src="img/socmed/telegram.png" width="48"></a>
-        <a href="https://wa.me/?text=https://tianliong.co.id/linktree/"><img src="img/socmed/whatsapp.svg" width="48"></a>
+        <a href="#" class="btn-wa"><img src="img/socmed/whatsapp.svg" width="48"></a>
         <a href="https://tianliong.co.id/linktree/"><img src="img/socmed/web.svg" width="48"></a>
       </div>
 
@@ -89,6 +121,53 @@ https://github.com/ardacarofficial/links-website is open source project.
       </div>
   </footer>
   <!-- Footer Codes End -->
+  <div class="panel panel-default kotak-kontak">
+  	<div class="panel-heading kepala" style="background-color:#128C7E; color:white;	font-size : 16px;"> <!--style kotak kontak-->
+		<div class="row">
+			<div class="col-xs-5">
+<i class="fa fa-whatsapp"></i>
+WhatsApp
+			</div>
+			<div class="col-xs-7" style="text-align:right">
+				Chat dengan kami
+			</div>
+		</div>
+	  
+	</div>
+  	<div class="panel-body">
+		<div class="well"> <!-- kotakan kontak, jika mau ditambah, tinggal menambahkan kontainer ini dan elemen2 di dalam kontainer ini -->
+			<div class="row"> 
+				<div class="col-xs-6">
+					<div>Nama 1</div>
+					<div>Nomor 1</div>
+				</div>
+				<div class="col-xs-6" style="text-align:right">
+					<a class="btn btn-default" href="https://wa.me/628129438805?text=Mohon bantuan">Chat</a>
+				</div>
+			</div>
+		</div>	
+		<div class="well">
+			<div class="row">
+				<div class="col-xs-6">
+					<div>Nama 2</div>
+					<div>Nomor 2</div>
+				</div>
+				<div class="col-xs-6" style="text-align:right">
+<a class="btn btn-default" href="https://wa.me/628129438805?text=Mohon bantuan">Chat</a>				</div>
+			</div>
+		</div>	
+		<div class="well">
+			<div class="row">
+				<div class="col-xs-6">
+					<div>Nama 3</div>
+					<div>Nomor 3</div>
+				</div>
+				<div class="col-xs-6" style="text-align:right">
+<a class="btn btn-default" href="https://wa.me/628129438805?text=Mohon bantuan">Chat</a>				</div>
+			</div>
+		</div>	
+	</div>
+</div>
   <script src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <!-- JQuery -->
@@ -96,7 +175,31 @@ https://github.com/ardacarofficial/links-website is open source project.
     
     <!-- Slick JS -->    
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
 
+
+      $(document).ready(function () {
+        $(".kotak-kontak").hide();
+      
+      $(".btn-wa").click(function(){
+        $(".btn-wa").hide(); //pada saat button di click button hide
+        $(".btn-wa").animate({bottom:'50px'}); //pada saat button di click geser sedikit ke atas
+        $(".kotak-kontak").show(); //pada saat button di click kontak show
+        $(".kotak-kontak").animate({bottom:'0px'},200);//pada saat button di click kontak geser ke atas
+        
+  
+      });
+      
+      
+      $(".kepala").click(function(){
+        $(".btn-wa").show(); //pada saat header kontak di click button show
+        $(".kotak-kontak").animate({bottom:'-400'},200); //pada saat header kontak di click kontak digeser ke bawah
+        $(".kotak-kontak").hide(); //pada saat header kontak di click kontak hide
+        $(".btn-wa").animate({bottom:'0px'},200); //pada saat header kontak di click button kembali ke tempat semula
+        
+      });
+      });
+  </script>	
   <script>
     $('.autoplay').slick({
   slidesToShow: 4,
