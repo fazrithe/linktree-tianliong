@@ -258,6 +258,15 @@ main {
   width: 30%;
 }
 
+.single_brand_item img {
+  width: auto !important;
+  opacity: 0.3;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.single_brand_item img:hover {
+  opacity: 0.6;
+}
 /* Responsive Codes */
 
 @media (max-width: 768px) {
@@ -296,4 +305,13 @@ main {
   .img-socmed {
     width: 100%;
   }
+  .single_brand_item img {
+    width: auto !important;
+    opacity: 0.3;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.single_brand_item img:hover {
+    opacity: 0.6;
+}
 }
